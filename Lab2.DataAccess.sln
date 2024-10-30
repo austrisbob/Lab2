@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.DataAccess", "Lab2.DataAccess\Lab2.DataAccess.csproj", "{2ADF1695-4963-46C1-95E1-6D6618E9E68C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.Console", "Lab2.Console\Lab2.Console.csproj", "{75881644-D750-4E76-B2D4-1E820C63AC04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.Consoles", "Lab2.Console\Lab2.Consoles.csproj", "{75881644-D750-4E76-B2D4-1E820C63AC04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
