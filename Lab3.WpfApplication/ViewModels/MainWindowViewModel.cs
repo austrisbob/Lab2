@@ -59,7 +59,7 @@ namespace Lab3.WpfApplication.ViewModels
                 return;
             }
 
-            Employees = _db.Employees.Where(s => s.Department.Id == SelectedDepartment.Id).ToList();
+            Employees = _db.Employees.Where(o => o.Department.Id == SelectedDepartment.Id).ToList();
         }
         public Department SelectedDepartment { get; set; }
         public ICommand SelectDepartmentComand { get; }

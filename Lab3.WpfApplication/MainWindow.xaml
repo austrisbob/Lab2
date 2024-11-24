@@ -27,7 +27,7 @@
                     <DataGridTextColumn Header="DarbiniekuSK" Width="150" Binding="{Binding DarbiniekuSK}" />
                 </DataGrid.Columns>
                 <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChenged">
+                    <i:EventTrigger EventName="SelectionChanged">
                         <i:InvokeCommandAction Command="{Binding SelectDepartmentComand}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
