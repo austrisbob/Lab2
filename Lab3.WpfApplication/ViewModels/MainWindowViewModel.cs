@@ -21,6 +21,7 @@ namespace Lab3.WpfApplication.ViewModels
         {
             _db = new DepartmentDbContext();
             SelectDepartmentComand = new RelayCommand(LoadEmployees);
+            SearchCommand = new RelayCommand(FilterData);
         }
 
         private Department[] _departments;
@@ -64,6 +65,11 @@ namespace Lab3.WpfApplication.ViewModels
         public Department SelectedDepartment { get; set; }
         public ICommand SelectDepartmentComand { get; }
 
+        public ICommand SearchCommand { get; }
 
+        public void FilterData()
+        {
+            
+        }
     }
 }

@@ -13,7 +13,12 @@
     </Window.DataContext>
    <Grid>
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
-            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Nosaukums"/>
+                <TextBlock x:Name="TbxSearchSurname" Width="200"/>
+                <Button x:Name="BtnSearch" Command="{Binding SearchCommand}">Search</Button>
+            </StackPanel>
+                    <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
                       x:Name="LstDepartments"
                       d:ItemsSource="{d:SampleData ItemCount=5}"
                       ItemsSource="{Binding Departments, Mode=OneWay}"
