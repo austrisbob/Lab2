@@ -1,0 +1,50 @@
+﻿<Window x:Class="Lab3.WpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3.WpfApplication"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:viewModels="clr-namespace:Lab3.WpfApplication.ViewModels"
+        mc:Ignorable="d"
+        Title="TestWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+   <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
+            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
+                      x:Name="LstDepartments"
+                      d:ItemsSource="{d:SampleData ItemCount=5}"
+                      ItemsSource="{Binding Departments, Mode=OneWay}"
+                      SelectionMode="Single"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      SelectedItem="{Binding SelectedDepartment, Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Width="100" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Nosaukums" Width="100" Binding="{Binding Nosaukums}" />
+                    <DataGridTextColumn Header="DarbiniekuSK" Width="150" Binding="{Binding DarbiniekuSK}" />
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChenged">
+                        <i:InvokeCommandAction Command="{Binding SelectDepartmentComand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+            <Label Content="Employee"/>
+            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
+                      x:Name="LstEmployee"
+                      d:ItemsSource="{d:SampleData ItemCount=5}"
+                      ItemsSource="{Binding Employees, Mode=OneWay}"
+                      SelectionMode="Single"
+                      CanUserAddRows="False"
+                      IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Vārds" Width="100" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Uzvards" Width="150" Binding="{Binding Surname}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
