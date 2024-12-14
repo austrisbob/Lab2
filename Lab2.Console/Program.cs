@@ -12,19 +12,16 @@ namespace Lab2.Consoles
     {
         static void Main(string[] args)
         {
-            var connection = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = master; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False");
-            connection.Open();
-            /*
-            var command = connection.CreateCommand();
-            command.CommandText = "SELECT";
+            using var db = new DepartmentDbContext();
 
-            var reader = command.ExecuteReader();
+            db.Database.EnsureCreated();
 
-            while (reader.Read())
+            var results = db.Departments.Where(d => d.Nosaukums == "RTU");
+            
+            foreach (var Departments in results)
             {
-                Console.WriteLine(reader.GetString(i: 0));
-            }*/
-            connection.Close();
+                System.Console.WriteLine(Departments);
+            }
         }
     }
 

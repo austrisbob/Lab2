@@ -15,10 +15,10 @@ namespace Lab2.DataAccess
         [StringLength(50)]
         public string Nosaukums { get; set; }
         [Required]
-        [StringLength(50)]
+        [Range(0, 1000)]
         public int DarbiniekuSK { get; set; }
         [Required]
-        [StringLength(200)]
+        [StringLength(50)]
         public string Apraksts { get; set; }
         public List<Employee> Employee { get; } = new();
     }
